@@ -4,7 +4,7 @@ class animal():
     def mostrarNombre(self):
         print(self.nombre)
     def __str__(self):
-        return self.nombre
+        return "Nombre del animal: " + self.nombre
         
 animal1 = animal("perro")
 animal2 = animal("gato")
@@ -13,5 +13,5 @@ animal2 = animal("gato")
 #animal2.mostrarNombre()
 
 print(animal1)
-#print(animal2.nombre)
+print(animal2)
     
