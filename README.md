@@ -1,5 +1,2 @@
-# 2DAW
-# Hola Mundo
-# Segunda Modificacion
-# Modificacion desde local
-# Nuevo Cambio
+# Repositorio de Jose Miguel Arras Gavira 2DAW
+
