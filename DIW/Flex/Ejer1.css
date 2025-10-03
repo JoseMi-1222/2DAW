@@ -1,0 +1,104 @@
+.cabecera{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.contenedor1 {
+    height: 100%;
+    background-color: black;
+    width: 20%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor2 {
+    height: 100%;
+    background-color: red;
+    width: 80%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main{
+    height: 450px;
+    width: 100%;
+    background-color: rgb(60, 60, 243);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.main2 {
+    height: 350px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;;
+}
+
+.contenedor3{
+    height: 100%;
+    background-color: rgb(43, 42, 42);
+    width: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor4{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+}
+
+.contenedor4-1 {
+    height: 100%;
+    width: 50%;
+    color: white;
+}
+
+.contenedor4-2 {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.contenedor4-2-1{
+    height: 50%;
+    width: 100%;
+    background-color: rgb(142, 215, 238);
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor4-2-2{
+    height: 50%;
+    width: 100%;
+    background-color: rgb(58, 190, 102);
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pie{
+    height: 50px;
+    width: 100%;
+    background-color: rgb(252, 252, 85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
