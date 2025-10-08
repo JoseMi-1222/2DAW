@@ -9,7 +9,7 @@ function borrarTodo() {
 }
 
 function mostrarResultado() {
-  pantalla.value = eval(pantalla.value);
+pantalla.value = eval(pantalla.value);
  
 }
 

@@ -27,10 +27,11 @@ h1{
   text-align: right;
   padding: 10px;
   margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
   background-color: #fafafa;
   color: #333;
+  border-color: black;
 }
 
 .teclas {
@@ -54,22 +55,6 @@ button:hover {
   background-color: #5a6268;
 }
 
-.op {
-  background-color: #007bff;
-}
-
-.op:hover {
-  background-color: #0069d9;
-}
-
-.igual {
-  background-color: #28a745;
-}
-
-.igual:hover {
-  background-color: #218838;
-}
-
 .limpiar {
   width: 100%;
   margin-top: 15px;
@@ -85,3 +70,39 @@ button:hover {
   background-color: #c82333;
 }
 
+.par:hover{
+    background-color: red;
+}
+
+.impar:hover{
+    background-color: green;
+}
+
+.op:hover{
+    background-color: yellow;
+    color: black;
+}
+
+.igual:hover{
+    background-color: yellow;
+    color: black;
+}
+
+.limpiar:hover{
+    background-color: yellow;
+    color: black;
+}
+
+.punto:hover{
+    background-color: yellow;
+    color: black;
+}
+
+.cero:hover{
+    background-color: blue;
+}
+
+footer{
+    text-align: right;
+    font-size: small;
+}
