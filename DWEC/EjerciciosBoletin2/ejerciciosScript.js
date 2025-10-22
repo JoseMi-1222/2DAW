@@ -312,7 +312,7 @@ let numeroDNI = prompt("Introduce los 8 dígitos del DNI (sin letra):");
     alert("La letra correspondiente al DNI " + numeroDNI + " es: " + letraDNI);
 */
 
-//Ejercicio 21: Crear una funcion que compruebe si la letra de un DNI es correcta
+//Ejercicio 21: Crear una funcion que compruebe si la letra de un DNI es correcta.
 function comprobarLetraDNI(dniCompleto) {
     let letras = "TRWAGMYFPDXBNJZSQVHLCKE";
     let numeroDNI = dniCompleto.slice(0, -1);
