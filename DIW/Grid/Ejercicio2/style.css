@@ -50,9 +50,6 @@
   
 }
 
-/* Estilos base (desktop/tablet grande ya los tienes) */
-
-/* Media query para pantallas pequeñas (móviles) */
 @media (max-width: 600px) {
     .container {
         grid-template-areas:
