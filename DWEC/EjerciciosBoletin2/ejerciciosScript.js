@@ -302,3 +302,32 @@ if (eleccion < 1 || eleccion > 3) {
     alert("Fallaste. La bolita estaba en el vaso " + posicion + ".");
 }
 */
+
+//Ejercicio 20: Calcular dni letra
+/*
+let numeroDNI = prompt("Introduce los 8 dígitos del DNI (sin letra):");
+    let letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+    let indice = parseInt(numeroDNI) % 23;
+    let letraDNI = letras.charAt(indice);
+    alert("La letra correspondiente al DNI " + numeroDNI + " es: " + letraDNI);
+*/
+
+//Ejercicio 21: Crear una funcion que compruebe si la letra de un DNI es correcta.
+function comprobarLetraDNI(dniCompleto) {
+    let letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+    let numeroDNI = dniCompleto.slice(0, -1);
+    let letraDNI = dniCompleto.slice(-1).toUpperCase();
+    let indice = parseInt(numeroDNI) % 23;
+    let letraCorrecta = letras.charAt(indice);
+    return letraDNI === letraCorrecta;
+}
+
+let dni = prompt("Introduce tu DNI completo (8 dígitos y letra):");
+if (comprobarLetraDNI(dni)) {
+    alert("La letra del DNI es correcta.");
+} else {
+    alert("La letra del DNI es incorrecta.");
+}
+
+
+

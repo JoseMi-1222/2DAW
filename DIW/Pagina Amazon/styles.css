@@ -142,3 +142,12 @@ body {
     font-size: 1em;
     color: #e91c1c;
 }
+
+.thumbnail{
+    margin-bottom: 10px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    border-color: #555;
+    margin-right: 10px;
+}
