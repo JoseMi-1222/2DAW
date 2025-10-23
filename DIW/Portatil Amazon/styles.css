@@ -1,0 +1,62 @@
+.container {
+    display: flex;
+    flex-direction: block;
+    
+}
+
+.izquierda{
+    display: flex;
+    flex-direction: column;
+}
+
+.center{
+    margin-right: 20px;
+}
+
+.img{
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 3%;
+}
+
+.description{
+    font-size: 30px;
+    
+}
+
+.tienda{
+    color: blue;
+}
+
+.valoraciones span{
+    color: rgb(10, 128, 255);
+}
+
+.comprados{
+    font-size: small;
+}
+
+.comprados span{
+    color: rgb(10, 128, 255);
+}
+
+.precio{
+    font-size: larger;
+}
+
+.devoluciones{
+    font-size: small;
+    color: rgb(10, 128, 255);
+}
+
+.incluyen span{
+    color: rgb(10, 128, 255);
+}
+
+.financia span{
+    color: rgb(10, 128, 255);
+}
+
+p{
+    line-height: 1;
+}
