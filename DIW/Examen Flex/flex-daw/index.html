@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Examen CSS Flex — Tech Courses</title>
+  <!-- Font Awesome (permitido en el examen) -->
+  <link rel="stylesheet" href="fontawesome-free-6.7.2-web/css/all.min.css" />
+  <link rel="stylesheet" href="josemi-arras-style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#" aria-label="Inicio">
+        <i class="fa-solid fa-code"></i> Tech<span>Courses</span>
+      </a>
+      <nav class="main-nav" aria-label="Principal">
+        <ul class="nav-list">
+          <li><a href="#cursos"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Cursos</a></li>
+          <li><a href="#beneficios"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Beneficios</a></li>
+          <li><a href="#contacto"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contacto</a></li>
+        </ul>
+      </nav>
+      <!-- Botón hamburguesa: visible en móvil -->
+      <button class="nav-toggle" aria-label="Abrir menú">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-text">
+        <h1>Aprende tecnologías que contratan</h1>
+        <p>Domina HTML, CSS Flexbox, JavaScript y frameworks modernos. Crea proyectos reales listos para tu portfolio.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#cursos"><i class="fa-solid fa-play"></i> Empezar</a>
+          <a class="btn ghost" href="#"><i class="fa-solid fa-circle-info"></i> Ver temario</a>
+        </div>
+      </div>
+      <div class="hero-media" role="img" aria-label="Ilustración de desarrollo web">
+        <!-- Puedes sustituir por una imagen si lo deseas -->
+        <div class="placeholder-media">IMG</div>
+      </div>
+    </section>
+
+    <section id="cursos" class="courses container">
+      <h2>Cursos destacados</h2>
+      <div class="card-row">
+        <article class="card">
+          <i class="fa-brands fa-html5 card-icon" aria-hidden="true"></i>
+          <h3>HTML Semántico</h3>
+          <p>Estructuras accesibles, SEO básico y mejores prácticas.</p>
+          <a class="btn small" href="#"><i class="fa-solid fa-arrow-right"></i> Ver</a>
+        </article>
+        <article class="card featured">
+          <i class="fa-brands fa-css3-alt card-icon" aria-hidden="true"></i>
+          <h3>CSS Flexbox</h3>
+          <p>Domina layout moderno, responsive y patrones reales.</p>
+          <a class="btn small" href="#"><i class="fa-solid fa-arrow-right"></i> Ver</a>
+        </article>
+        <article class="card">
+          <i class="fa-brands fa-js card-icon" aria-hidden="true"></i>
+          <h3>JavaScript</h3>
+          <p>Eventos, DOM, módulos y llamadas a APIs.</p>
+          <a class="btn small" href="#"><i class="fa-solid fa-arrow-right"></i> Ver</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="beneficios" class="benefits container">
+      <h2>Beneficios</h2>
+      <ul class="benefit-list">
+        <li><i class="fa-solid fa-clock"></i> Ritmo flexible</li>
+        <li><i class="fa-solid fa-laptop-code"></i> Proyectos reales</li>
+        <li><i class="fa-solid fa-users"></i> Mentoría y feedback</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer id="contacto" class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h3>Contacto</h3>
+        <p>correo@centro.edu<br> +34 600 000 000</p>
+      </div>
+      <div class="footer-col">
+        <h3>Síguenos</h3>
+        <p class="social">
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

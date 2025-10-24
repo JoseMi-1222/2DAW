@@ -1,0 +1,169 @@
+body{
+    background-color: rgb(32, 32, 32);
+    color: white;
+}
+
+.site-header{
+    border-bottom: 0.5px solid rgb(255, 255, 255);
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.header-inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+}
+
+.main-nav{
+    margin-left: 1400px;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: bold;
+}
+
+.logo span{
+    color: green;
+}
+
+.nav-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-list a{
+    padding: 10px;
+    border-radius: 8px;
+    background: transparent;
+}
+
+.nav-toggle{
+    display: none;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+
+.card-row{
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    margin: 20px;
+    border: 1px solid black;
+    border-radius: 10px ;
+    background-color: rgb(59, 59, 59);
+    padding: 15px;
+    color: white;
+}
+
+h2{
+    margin-left: 20%;
+    margin-top: 2%;
+}
+
+.hero{
+    display: flex;
+    justify-content: center;
+}
+
+.hero-text{
+    color: white;
+    gap:10px;
+}
+
+.hero-media{
+    width: 35%;
+    border: 1px dashed rgb(255, 255, 255) ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    padding: 10px;
+    margin-left: 20px;  
+}
+
+.benefit-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 18px;
+    margin-left: 20%;
+}
+
+.benefit-list li{
+    border: 1px solid black;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: rgb(71, 71, 71);
+    color: white;
+}
+
+.card-row .btn{
+    color: white;
+}
+
+.site-footer{
+    border-top: 0.5px solid rgb(255, 255, 255);    
+    margin-top: 20px;
+}
+
+.footer-inner{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-right: 900px;
+    margin-left: 30px;
+    
+}
+
+.footer-col{
+    display: flex;
+    flex-direction: column;
+}
+
+.social a{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-right: 8px;
+}
+
+.btn{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.primary{
+    background-color: green;
+    color: black;
+}
+
+.ghost{
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+}
+
+@media (max-width:700px){
+    .main-nav{
+        display: none;
+        margin-left: 0px;
+    
+    }
+    .benefit-list{flex-direction: column;}
+    .footer-inner{flex-direction: column;}
+}
+
