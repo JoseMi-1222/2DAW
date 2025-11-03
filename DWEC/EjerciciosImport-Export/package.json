@@ -1,0 +1,13 @@
+{
+  "name": "ejercicios-import-export",
+  "version": "1.0.0",
+  "description": "Ejercicios de import y export en JavaScript",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "author": "Jose Miguel",
+  "license": "ISC"
+}
+
