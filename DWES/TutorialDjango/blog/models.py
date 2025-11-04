@@ -20,3 +20,15 @@ class Post(models.Model):
     def __str__(self):
         return "Titulo del post: " + self.title
 
+"""
+Select 
+    c.* from 
+    coche c
+        inner join marca m ON m.id=c.id_marca
+        inner join fabrica f on f.id=c.id_fabrica
+    WHERE
+        m.modelo like '%renault%'
+        f.ciudad like '%sevilla%'
+"""
+
+
