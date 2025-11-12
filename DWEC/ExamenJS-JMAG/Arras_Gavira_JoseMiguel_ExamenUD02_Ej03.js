@@ -25,7 +25,7 @@ class OperacionInvalidaError extends Error{
 //funcion que divide y lanza eerror y devuelve el resultado
 function dividir(a,b){
     if (b===0) {
-        throw new OperacionInvalidaError("División por cero no permitida");
+        throw new OperacionInvalidaError("División por cero no permitida", "División");
     }
     return a / b;
 }
