@@ -15,6 +15,7 @@ bloque try...catch.Las pruebas son parte del examen*/
 //defino el construcor y los metodos
 
 class Pelicula{
+    
     precioBase = 5
     constructor(titulo, genero) {
         this.titulo = titulo
