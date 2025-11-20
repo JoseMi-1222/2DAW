@@ -1,5 +1,5 @@
-numero :int=1
-booleano :bool=True
+numero : int=1
+booleano : bool=True
 cadena :str="Hola Mundo"
 lista :list=[1,2,3,4,5]
 diccionario={"nombre":"Juan","edad":30}
