@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen CSS Grid</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Importante: separa cada ejercicio en un archivo HTML distinto, tal y como indican las instrucciones</h1>
+
+    <h2>Ejercicio 1</h2>
+    <div class="layout-container">
+        <header class="header">HEADER (#ffcc00)</header>
+        <aside class="sidebar">
+            <h3>Sidebar</h3>
+            <p>Ancho fijo: 250px</p>
+            <ul>
+                <li>Opción 1</li>
+                <li>Opción 2</li>
+                <li>Opción 3</li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <h3>Contenido Principal</h3>
+            <p>Ocupa el espacio restante (1fr).</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </main>
+        <footer class="footer">FOOTER (#333)</footer>
+    </div>
+
+
+    <h2>Ejercicio 2</h2>
+    <div class="gallery-container">
+        <div class="card">
+            <div class="card-img">IMG</div>
+            <h3>Tarjeta 1</h3>
+            <p>Descripción breve del ítem.</p>
+        </div>
+        <div class="card">
+            <div class="card-img">IMG</div>
+            <h3>Tarjeta 2</h3>
+            <p>Descripción breve del ítem.</p>
+        </div>
+        <div class="card">
+            <div class="card-img">IMG</div>
+            <h3>Tarjeta 3</h3>
+            <p>Descripción breve del ítem.</p>
+        </div>
+        <div class="card">
+            <div class="card-img">IMG</div>
+            <h3>Tarjeta 4</h3>
+            <p>Esta tarjeta tiene un poco más de texto para verificar que la altura se estira correctamente en toda la fila.</p>
+        </div>
+        <div class="card">
+            <div class="card-img">IMG</div>
+            <h3>Tarjeta 5</h3>
+            <p>Descripción breve del ítem.</p>
+        </div>
+        <div class="card">
+            <div class="card-img">IMG</div>
+            <h3>Tarjeta 6</h3>
+            <p>Descripción breve del ítem.</p>
+        </div>
+    </div>
+
+
+<h2>Ejercicio 3: Formulario con Grid y Span</h2>
+<div class="form-container">
+    <h3 class="form-title">Registro de Usuario</h3>
+    
+    <input type="text" placeholder="Nombre">
+    <input type="text" placeholder="Apellido">
+    
+    <input type="email" class="full-width" placeholder="Correo Electrónico">
+    
+    <input type="password" placeholder="Contraseña">
+    <input type="password" placeholder="Confirmar Contraseña">
+    
+    <textarea class="full-width" rows="3" placeholder="Dirección completa"></textarea>
+    
+    <button class="btn-submit">Registrarse</button>
+</div>
+
+    <br><br><br>
+</body>
+</html>

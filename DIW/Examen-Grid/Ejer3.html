@@ -1,0 +1,39 @@
+<!--Ejercicio 3:
+Diseña un formulario de registro centrado en la pantalla. Requisitos:
+Contenedor del Formulario: Debe tener un ancho máximo de 600px y estar centrado horizontalmente en la página.
+La Rejilla (Grid): El formulario debe comportarse como un Grid de 2 columnas de igual tamaño (1fr 1fr).
+
+Distribución de elementos:
+Título ("Registro"): Debe ocupar todo el ancho superior (las 2 columnas).
+Nombre y Apellido: Deben ir en la misma fila (Nombre en col 1, Apellido en col 2).
+Email: Debe ocupar todo el ancho (las 2 columnas).
+Contraseña y Confirmar: Deben ir en la misma fila (una al lado de la otra).
+Dirección: Debe ocupar todo el ancho (las 2 columnas).
+Botón de "Enviar": Debe ocupar todo el ancho de la parte inferior.
+Espaciado: Usa gap para separar los campos (ej. 15px).-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen CSS Grid 3</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h3 class="form-title">Registro de Usuario</h3>
+    
+        <input type="text" placeholder="Nombre">
+        <input type="text" placeholder="Apellido">
+    
+        <input type="email" class="full-width" placeholder="Correo Electrónico">
+    
+        <input type="password" placeholder="Contraseña">
+        <input type="password" placeholder="Confirmar Contraseña">
+    
+        <textarea class="full-width" rows="3" placeholder="Dirección completa"></textarea>
+    
+        <button class="btn-submit">Registrarse</button>
+    </div>
+</body>
+</html>

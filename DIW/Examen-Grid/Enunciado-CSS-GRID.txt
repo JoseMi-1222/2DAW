@@ -1,0 +1,40 @@
+Entrega un único archivo css llamado style.css como solución a los 3 ejercicios. 
+
+
+Ejercicio 1:
+Crea una estructura de página clásica utilizando Grid Areas (grid-template-areas). Requisitos:
+Header: Ocupa todo el ancho superior. Color de fondo: #ffcc00.
+Sidebar (Menú): A la izquierda, ocupando el espacio entre el header y el footer. Ancho fijo de 250px. Color: #cccccc.
+Contenido Principal: A la derecha del Sidebar. Ocupa el resto del ancho disponible (1fr). Color: #f0f0f0.
+Footer: Ocupa todo el ancho inferior. Color: #333, texto blanco.
+Altura: El layout debe ocupar el 100% de la altura del viewport. El Header y Footer tienen altura fija (ej. 60px), y la zona central (Sidebar y Contenido) debe estirarse para llenar el resto.
+---------------------------------------------------------
+
+Ejercicio 2:
+Crea una galería de tarjetas (cards) que sea completamente responsive sin usar Media Queries (usando las funciones de Grid). Requisitos:
+Crea un contenedor con 6 elementos div (las tarjetas).
+Las tarjetas deben tener un borde, un padding y una imagen de placeholder o texto.
+Usa grid-template-columns con repeat(), auto-fill (o auto-fit) y minmax().
+
+Comportamiento:
+En pantallas grandes, las tarjetas deben tener un ancho mínimo de 280px y compartir el espacio equitativamente.
+Al reducir la pantalla, las tarjetas deben bajar de fila automáticamente cuando no quepan.
+Todas las filas deben tener la misma altura (auto o una medida fija), pero las tarjetas deben estirarse para tener la misma altura entre sí.
+Añade un gap de 20px entre tarjetas.
+----------------------------------------------------------
+
+Ejercicio 3:
+Diseña un formulario de registro centrado en la pantalla. Requisitos:
+Contenedor del Formulario: Debe tener un ancho máximo de 600px y estar centrado horizontalmente en la página.
+La Rejilla (Grid): El formulario debe comportarse como un Grid de 2 columnas de igual tamaño (1fr 1fr).
+
+Distribución de elementos:
+Título ("Registro"): Debe ocupar todo el ancho superior (las 2 columnas).
+Nombre y Apellido: Deben ir en la misma fila (Nombre en col 1, Apellido en col 2).
+Email: Debe ocupar todo el ancho (las 2 columnas).
+Contraseña y Confirmar: Deben ir en la misma fila (una al lado de la otra).
+Dirección: Debe ocupar todo el ancho (las 2 columnas).
+Botón de "Enviar": Debe ocupar todo el ancho de la parte inferior.
+Espaciado: Usa gap para separar los campos (ej. 15px).
+
+Restricción: No uses grid-template-areas, utiliza la propiedad grid-column con la palabra clave span para los elementos que ocupan todo el ancho.
