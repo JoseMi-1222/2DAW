@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Buscador iTunes</title>
+</head>
+<style>
+    footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #f1f1f1;
+        text-align: center;
+        padding: 10px 0;
+    }
+</style>
+
+<body>
+    <div class="main">
+        <h2>Buscador de música (iTunes API)</h2>
+
+        <input type="text" id="searchInput" placeholder="Escribe un artista o canción">
+        <button id="searchBtn">Buscar</button>
+
+        <ul id="results"></ul>
+    </div>
+    <footer>
+        <!--footer siempre debe estar al final del body-->
+        <p>Datos obtenidos de la API pública de iTunes.</p>
+    </footer>
+
+    <script>
+        // Función para reproducir o pausar el audio, cuando el boton es pulsado cambia el texto del boton
+        function playPause(button, audioId) {
+            const audioElement = document.getElementById(audioId);
+            if (audioElement.paused) {
+                audioElement.play();
+                button.innerText = "Pause";
+            } else {
+                audioElement.pause();
+                button.innerText = "Play";
+            }    
+        }
+
+        document.getElementById("searchBtn").addEventListener("click", function () {
+            const query = document.getElementById("searchInput").value.trim();
+            const resultsList = document.getElementById("results");
+            resultsList.innerHTML = ""; // Limpiar resultados anteriores
+
+            if (!query) {
+                resultsList.innerHTML = "<li>Escribe algo para buscar.</li>";
+                return;
+            }
+
+            const url = `https://itunes.apple.com/search?term=${encodeURIComponent(query)}&entity=song&limit=10`;
+
+            fetch(url)
+                .then(res => res.json())
+                .then(data => {
+                    if (data.results.length === 0) {
+                        resultsList.innerHTML = "<li>No se encontraron resultados.</li>";
+                        return;
+                    }
+
+                    let contador = 1;
+                    data.results.forEach(item => {
+                        const audioId = "audio" + contador;
+                        const li = document.createElement("li");
+                        li.innerHTML = `
+                        <strong>${item.trackName}</strong> — ${item.artistName}
+                        <br>
+                        <button onclick="playPause(this, '${audioId}')">Play</button>
+                        <audio id="${audioId}" src="${item.previewUrl}"></audio>
+                        `;
+                        resultsList.appendChild(li);
+                        contador++;
+                    });
+                })
+                .catch(err => {
+                    resultsList.innerHTML = "<li>Error al buscar datos.</li>";
+                    console.error(err);
+                });
+        });
+    </script>
+
+</body>
+
+</html>
