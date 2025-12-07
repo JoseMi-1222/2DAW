@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Examen Viajes</title>
+    <style>
+        /* Estilos básicos para que se vea decente, similar a la foto */
+        body {
+            font-family: sans-serif;
+            background-color: #333;
+            color: white;
+        }
+
+        #mostrar {
+            cursor: pointer;
+            color: orange;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .viaje {
+            background: #444;
+            margin: 10px;
+            padding: 15px;
+            border: 1px solid #555;
+            display: inline-block;
+            width: 30%;
+            vertical-align: top;
+        }
+
+        .viaje img {
+            width: 100%;
+            height: auto;
+        }
+
+        .detalle {
+            display: block;
+            background: #6daaf1;
+            color: black;
+            padding: 5px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        button.reserva {
+            width: 100%;
+            background: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Clase para el ejercicio B */
+        .destacado {
+            color: yellow;
+            font-size: 1.2em;
+            text-decoration: underline;
+            transition: 0.3s;
+        }
+
+        /* Estilo para el precio noche (que no salía en el HTML de ejemplo pero hace falta para el punto B) */
+        .precio-noche {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: #333;
+            padding: 5px;
+            transform: rotate(15deg);
+        }
+
+        .viaje {
+            position: relative;
+        }
+
+        /* Para posicionar el precio noche */
+    </style>
+</head>
+
+<body>
+
+    <h1 id="mostrar">MOSTRAR VIAJES</h1>
+
+    <script>
+        // Array proporcionado en el examen (copiado literal)
+        var viajes = [
+            { "clase_pais": "usa", "ciudad_h2": "New York, NY", "detalle_precio_total": "1,899", "detalle_num_noches": 7, "precio_noche": 275, "ruta_imagen": "./photos/newyork.jpg", "pie_imagen": "Puente Brooklyn" },
+            { "clase_pais": "paris", "ciudad_h2": "Paris, Francia", "detalle_precio_total": "1,499", "detalle_num_noches": 5, "precio_noche": 300, "ruta_imagen": "./photos/paris.jpg", "pie_imagen": "Notre Dame de Paris" },
+            { "clase_pais": "uk", "ciudad_h2": "Londres, UK", "detalle_precio_total": "2,199", "detalle_num_noches": 5, "precio_noche": 440, "ruta_imagen": "./photos/london.jpg", "pie_imagen": "Torre de Londres" }
+        ];
+
+        // Seleccionamos el elemento h1
+        var botonMostrar = document.getElementById("mostrar");
+
+        // Variable para controlar si la lista está creada o no
+        var listaCreada = false;
+
+        botonMostrar.addEventListener("click", function () {
+
+            // Si la lista no está creada, la creamos (MOSTRAR)
+            if (!listaCreada) {
+                botonMostrar.innerText = "OCULTAR VIAJES";
+
+                // Creamos la lista UL
+                var listaUl = document.createElement("ul");
+                listaUl.id = "lista-viajes";
+
+                // Recorremos el array para generar el HTML
+                for (var i = 0; i < viajes.length; i++) {
+                    var v = viajes[i];
+
+                    // Generamos el HTML concatenando strings 
+                    // Nota: He añadido un span para el precio_noche porque el ejercicio B pide destacarlo, 
+                    // aunque el HTML de ejemplo del PDF no lo mostraba.
+                    var htmlViaje = `
+                <li class="viaje ${v.clase_pais}">
+                    <span class="precio-noche" id="precio-${i}">$${v.precio_noche}/night</span>
+                    <h2>${v.ciudad_h2}</h2>
+                    <span class="detalle">$${v.detalle_precio_total} por ${v.detalle_num_noches} noches</span>
+                    <div id="zona-reserva-${i}">
+                        <button class="reserva" onclick="gestionarReserva(${i})">Resérvalo ya!</button>
+                    </div>
+                    <ul class="fotos">
+                        <li>
+                            <img src="${v.ruta_imagen}" id="img-${i}">
+                            <span id="pie-${i}">${v.pie_imagen}</span>
+                        </li>
+                    </ul>
+                </li>
+            `;
+
+                    // Añadimos el string al innerHTML de la lista
+                    listaUl.innerHTML += htmlViaje;
+                }
+
+                // Añadimos la lista al body después del h1
+                document.body.appendChild(listaUl);
+                listaCreada = true;
+
+                // --- PARTE B: Eventos HOVER --- 
+                // Añadimos los eventos después de que existen en el DOM
+                agregarEventosHover();
+
+            } else {
+                // Si ya está creada, la borramos (OCULTAR) 
+                var lista = document.getElementById("lista-viajes");
+                if (lista) {
+                    lista.remove();
+                }
+                botonMostrar.innerText = "MOSTRAR VIAJES";
+                listaCreada = false;
+            }
+        });
+
+        // Función para la Parte B (Hover)
+        function agregarEventosHover() {
+            for (let i = 0; i < viajes.length; i++) {
+                let imagen = document.getElementById("img-" + i);
+                let pie = document.getElementById("pie-" + i);
+                let precioNoche = document.getElementById("precio-" + i);
+
+
+                imagen.addEventListener("mouseover", function () {
+                    precioNoche.classList.add("destacado");
+                });
+                imagen.addEventListener("mouseout", function () {
+                    precioNoche.classList.remove("destacado");
+                });
+
+                // Al pasar el ratón por el pie de foto
+                pie.addEventListener("mouseover", function () {
+                    precioNoche.classList.add("destacado");
+                });
+                pie.addEventListener("mouseout", function () {
+                    precioNoche.classList.remove("destacado");
+                });
+            }
+        }
+
+        // --- PARTE C: Gestión de Reserva y LocalStorage --- [cite: 64, 65, 73]
+        // Esta función se llama desde el HTML generado (onclick="gestionarReserva...")
+        function gestionarReserva(indice) {
+            var zonaReserva = document.getElementById("zona-reserva-" + indice);
+
+            // Reemplazamos el botón por el input y el botón de aceptar
+            // No usamos 'required' como dice el enunciado, lo validaremos por JS
+            zonaReserva.innerHTML = `
+        <input type="text" id="input-nombre-${indice}" placeholder="Tu nombre aquí">
+        <button onclick="guardarNombre(${indice})">Aceptar</button>
+    `;
+        }
+
+        function guardarNombre(indice) {
+            var input = document.getElementById("input-nombre-" + indice);
+            var nombre = input.value;
+
+            // Validación simple: que no esté vacío
+            if (nombre != "") {
+                localStorage.setItem("usuario_reserva", nombre);
+                alert("Usuario " + nombre + " guardado correctamente.");
+            } else {
+                alert("Por favor, rellena el nombre.");
+            }
+        }
+    </script>
+</body>
+
+</html>
